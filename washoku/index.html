@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>和心餐 Washoku Cocoro｜職人手作溫暖口味・在地日常平價輕食</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-washi: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --bg-warm: #F3EFEA;
+      --text-wood: #3A2E25;
+      --text-muted: #6E5D4F;
+      --accent-crimson: #C0392B;
+      --accent-crimson-dark: #9E2B20;
+      --accent-matcha: #5B7052;
+      --border-light: #E6DFD5;
+      --shadow-soft: 0 10px 30px rgba(58, 46, 37, 0.06);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-washi);
+      color: var(--text-wood);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-wood);
+    }
+
+    .brand-stamp {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--accent-crimson);
+      color: var(--accent-crimson);
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 900;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-wood);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-crimson);
+    }
+
+    .cart-trigger {
+      background: var(--text-wood);
+      color: #FFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cart-trigger:hover {
+      background: var(--accent-crimson);
+      transform: translateY(-1px);
+    }
+
+    .cart-badge {
+      background: var(--accent-crimson);
+      color: #FFF;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 99px;
+      transition: background 0.2s;
+    }
+
+    .cart-trigger:hover .cart-badge {
+      background: #FFF;
+      color: var(--accent-crimson);
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 64px 24px 72px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--bg-warm);
+      color: var(--accent-crimson);
+      border: 1px solid rgba(192, 57, 43, 0.25);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.3;
+      font-weight: 900;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: var(--accent-crimson);
+      color: #FFF;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-crimson-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-wood);
+      border: 1.5px solid var(--text-wood);
+      padding: 13px 26px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--text-wood);
+      color: #FFF;
+    }
+
+    .hero-visual {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .noren-banner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .noren-cloth {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-top: 6px solid var(--text-wood);
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-wood);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .noren-cloth:last-child {
+      color: var(--accent-crimson);
+    }
+
+    .kitchen-status-card {
+      background: #FFF;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-light);
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--accent-matcha);
+      font-weight: 700;
+    }
+
+    .live-dot::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--accent-matcha);
+      border-radius: 50%;
+    }
+
+    .status-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .status-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag-fresh {
+      background: #EBF3E8;
+      color: var(--accent-matcha);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .tag-limited {
+      background: #FDECEB;
+      color: var(--accent-crimson);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-title span {
+      display: block;
+      font-size: 13px;
+      color: var(--accent-crimson);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    /* Story Grid */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .story-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .story-num {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-crimson);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .story-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .story-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* Menu */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .tab-btn {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      color: var(--text-wood);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--text-wood);
+      color: #FFF;
+      border-color: var(--text-wood);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .menu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .menu-badge {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-warm);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .menu-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .menu-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .price {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-crimson);
+    }
+
+    .add-btn {
+      background: var(--bg-warm);
+      color: var(--text-wood);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-btn:hover {
+      background: var(--accent-crimson);
+      color: #FFF;
+      border-color: var(--accent-crimson);
+    }
+
+    /* Loyalty */
+    .loyalty-box {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .loyalty-card {
+      background: #FFF;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+
+    .loyalty-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      color: var(--text-wood);
+    }
+
+    .loyalty-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .loyalty-highlight {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-crimson);
+    }
+
+    /* Store Info */
+    .store-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .store-details h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .info-row {
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .info-label {
+      font-weight: 700;
+      display: inline-block;
+      width: 90px;
+      color: var(--text-wood);
+    }
+
+    .map-placeholder {
+      background: var(--bg-warm);
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      min-height: 240px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-wood);
+      color: #EAE3DA;
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 14px;
+    }
+
+    /* Cart Drawer */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 22, 16, 0.45);
+      z-index: 200;
+      display: none;
+    }
+
+    .drawer-overlay.open {
+      display: block;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: var(--bg-washi);
+      z-index: 210;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s ease;
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .drawer-header {
+      padding: 20px 24px;
+      background: #FFF;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-wood);
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+    }
+
+    .cart-item {
+      background: #FFF;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-warm);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .checkout-form {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border-light);
+      display: grid;
+      gap: 12px;
+    }
+
+    .checkout-form input, .checkout-form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      background: #FFF;
+    }
+
+    .drawer-footer {
+      padding: 18px 24px;
+      background: #FFF;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .order-success {
+      background: #EBF3E8;
+      border: 1px solid var(--accent-matcha);
+      color: #2E4726;
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 16px;
+      font-size: 14px;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .story-grid, .menu-grid, .loyalty-box, .store-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-stamp">和心</div>
+        <div>
+          <div class="brand-name serif">和心餐</div>
+          <span class="brand-sub">WASHOKU COCORO</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#story">職人溫度</a></li>
+          <li><a href="#menu">每日菜單</a></li>
+          <li><a href="#loyalty">常連客心意</a></li>
+          <li><a href="#store">門市資訊</a></li>
+        </ul>
+      </nav>
+      <button class="cart-trigger" onclick="toggleCart(true)">
+        線上預約點餐 <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 首屏視覺 -->
+  <section class="hero">
+    <div>
+      <span class="hero-tag">每日新鮮現做 ・ 銅板平價日式輕食</span>
+      <h1>職人手作溫暖口味，<br>在地日常極致平價美食！</h1>
+      <p>不用飛日本，也能在忙碌的日常裡品嚐到日本社區食堂的質樸感動。嚴選在地好米現捏飯糰、現煎高湯玉子燒與暖心豚汁，陪你度過每一個元氣滿滿的早晨與午後。</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">立即預約取餐</a>
+        <a href="#story" class="btn-outline">認識和心餐理念</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="noren-banner">
+        <div class="noren-cloth">手</div>
+        <div class="noren-cloth">作</div>
+        <div class="noren-cloth">溫</div>
+        <div class="noren-cloth">暖</div>
+      </div>
+      <div class="kitchen-status-card">
+        <div class="status-header">
+          <strong class="serif">今日廚房現做動態</strong>
+          <span class="live-dot">現正供應中</span>
+        </div>
+        <ul class="status-list">
+          <li>
+            <span>🍙 炙燒明太子手作飯糰</span>
+            <span class="tag-fresh">剛出爐熱賣</span>
+          </li>
+          <li>
+            <span>🍳 日式高湯厚燒玉子燒</span>
+            <span class="tag-fresh">每日現煎</span>
+          </li>
+          <li>
+            <span>🍲 暖心豚汁（豬肉蔬菜味噌湯）</span>
+            <span class="tag-fresh">暖胃推薦</span>
+          </li>
+          <li>
+            <span>🍛 昭和家庭風微辣咖哩飯</span>
+            <span class="tag-limited">今日限量 12 份</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌堅持與職人溫度 -->
+  <section id="story">
+    <div class="section-title">
+      <span>OUR PHILOSOPHY</span>
+      <h2>每一口，都是日本在地的日常溫度</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <span class="story-num">其一 ・ 嚴選食材</span>
+        <h3>在地優質好米，現煮現捏</h3>
+        <p>堅持每日清晨現煮飽滿米飯，手工掌握恰到好處的鬆軟空氣感，搭配日本進口海苔與手作餡料，45元起就能享受純粹米香。</p>
+      </div>
+      <div class="story-card">
+        <span class="story-num">其二 ・ 新鮮現做</span>
+        <h3>高湯厚燒玉子與暖胃豚汁</h3>
+        <p>使用昆布柴魚高湯層層捲煎的玉子燒，滑嫩多汁；搭配滿滿根莖蔬菜與豬肉片的家常味噌湯，為上班族與學生補充滿滿元氣。</p>
+      </div>
+      <div class="story-card">
+        <span class="story-num">其三 ・ 鄰里人情</span>
+        <h3>如同日本街角食堂的歸屬感</h3>
+        <p>溫潤木質調空間與親切無壓力的服務，支持線上提前預約、到店免排隊快取，讓忙碌的日常也能擁有一頓從容暖心的餐食。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 互動式線上菜單 -->
+  <section id="menu">
+    <div class="section-title">
+      <span>DAILY MENU</span>
+      <h2>每日手作輕食菜單</h2>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="filterMenu('all', this)">全部餐點</button>
+      <button class="tab-btn" onclick="filterMenu('onigiri', this)">手作飯糰（45元起）</button>
+      <button class="tab-btn" onclick="filterMenu('side', this)">暖心湯品與小菜</button>
+      <button class="tab-btn" onclick="filterMenu('set', this)">家常定食與茶飲</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- 常連客心意 -->
+  <section id="loyalty">
+    <div class="section-title">
+      <span>REGULAR MEMBERS</span>
+      <h2>常連客心意・熟客專屬日常方案</h2>
+    </div>
+    <div class="loyalty-box">
+      <div class="loyalty-card">
+        <h3>🌅 晨間元氣週卡</h3>
+        <p>專為平日通勤族與學生設計，任選「手作飯糰＋無糖日本茶飲」5日兌換組合，每天早上快速取餐不趕時間。</p>
+        <span class="loyalty-highlight">組合優惠價 NT$ 360 / 週</span>
+      </div>
+      <div class="loyalty-card">
+        <h3>🍱 平日午餐寄餐方案</h3>
+        <p>預購 5 餐或 10 餐平日輕食定食包，可分次線上預約兌換，再加贈每日現熬暖心味噌湯乙碗。</p>
+        <span class="loyalty-highlight">享 88 折熟客專屬禮遇</span>
+      </div>
+      <div class="loyalty-card">
+        <h3>🍵 官方 LINE 好友見面禮</h3>
+        <p>加入和心餐官方 LINE 帳號，即可領取首購「冷泡京都焙茶」或「和風胡麻小菜」免費兌換券一張。</p>
+        <span class="loyalty-highlight">到店出示畫面即可兌換</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 門市資訊 -->
+  <section id="store">
+    <div class="section-title">
+      <span>VISIT US</span>
+      <h2>門市資訊與線上預約取餐</h2>
+    </div>
+    <div class="store-grid">
+      <div class="store-details">
+        <h3 class="serif">和心餐・一號店（示範門市）</h3>
+        <div class="info-row"><span class="info-label">門市地址</span>台北市大安區和平東路二段 118 巷 12 號</div>
+        <div class="info-row"><span class="info-label">營業時間</span>週一至週六 07:30 – 20:00（週日公休）</div>
+        <div class="info-row"><span class="info-label">聯絡電話</span>(02) 2732-8899</div>
+        <div class="info-row"><span class="info-label">交通指引</span>捷運科技大樓站步行約 4 分鐘</div>
+        <div class="info-row"><span class="info-label">服務特色</span>支援官網線上預約、到店免排隊快取、環保餐盒折抵 5 元</div>
+      </div>
+      <div class="map-placeholder">
+        <strong class="serif" style="font-size: 18px; margin-bottom: 8px;">📍 商圈步行 4 分鐘即達</strong>
+        <p style="font-size: 14px; color: var(--text-muted); max-width: 280px;">
+          建議提前 15 分鐘於官網點選「線上預約點餐」，到店報出取餐編號即可熱騰騰帶走！
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="serif" style="font-size: 18px; margin-bottom: 6px;">和心餐 Washoku Cocoro</p>
+    <p>© 2026 和心餐手作日式輕食. All Rights Reserved. ｜ 職人手作溫暖口味・在地日常平價美食</p>
+  </footer>
+
+  <!-- 側邊點餐籃抽屜 -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleCart(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3 class="serif">您的預約點餐籃</h3>
+      <button class="close-btn" onclick="toggleCart(false)">×</button>
+    </div>
+    <div class="drawer-body">
+      <div id="cartItemsContainer"></div>
+
+      <div class="checkout-form" id="checkoutSection">
+        <strong class="serif">預約取餐資訊</strong>
+        <input type="text" id="customerName" placeholder="取餐人稱呼（例如：陳小姐）" />
+        <input type="tel" id="customerPhone" placeholder="聯絡電話（方便出餐通知）" />
+        <select id="pickupTime">
+          <option value="15分鐘後取餐">預計 15 分鐘後到店取餐</option>
+          <option value="30分鐘後取餐">預計 30 分鐘後到店取餐</option>
+          <option value="中午12:00取餐">今日中午 12:00 準時取餐</option>
+          <option value="傍晚18:00取餐">今日傍晚 18:00 準時取餐</option>
+        </select>
+        <input type="text" id="orderNote" placeholder="口味備註（如：不加蔥、飯少、自備環保盒）" />
+      </div>
+
+      <div class="order-success" id="orderSuccessBox"></div>
+    </div>
+    <div class="drawer-footer">
+      <div class="total-row">
+        <span>合計金額</span>
+        <span id="cartTotal" style="color: var(--accent-crimson);">NT$ 0</span>
+      </div>
+      <button class="btn-primary" style="width: 100%;" onclick="submitOrder()">送出線上預約訂單</button>
+    </div>
+  </aside>
+
+  <script>
+    const menuData = [
+      { id: 1, category: 'onigiri', badge: '人氣招牌', name: '炙燒明太子手作飯糰', desc: '嚴選九州風味明太子微炙燒，搭配現煮台梗九號米與脆口海苔。', price: 55 },
+      { id: 2, category: 'onigiri', badge: '經典入門', name: '日高昆布佃煮飯糰', desc: '慢火熬煮甘甜昆布絲，清爽不膩口的日本家庭經典早餐首選。', price: 45 },
+      { id: 3, category: 'onigiri', badge: '飽足推薦', name: '和風照燒雞腿飯糰', desc: '秘製醬汁煎烤嫩雞腿肉，鹹甜交織、深受上班族與學生喜愛。', price: 60 },
+      { id: 4, category: 'side', badge: '每日現煎', name: '日式高湯厚燒玉子燒', desc: '柴魚昆布高湯與新鮮雞蛋層層捲煎，口感軟嫩多汁、蛋香濃郁。', price: 50 },
+      { id: 5, category: 'side', badge: '暖胃必點', name: '暖心豚汁（豬肉蔬菜味噌湯）', desc: '白蘿蔔、紅蘿蔔、牛蒡與豬五花慢熬，加入日本信州味噌溫潤順口。', price: 45 },
+      { id: 6, category: 'set', badge: '午晚餐推薦', name: '昭和家庭風蘋果咖哩飯', desc: '加入蘋果泥與洋蔥慢熬的溫和甜口咖哩，搭配滑嫩歐姆蛋與漬物。', price: 115 },
+      { id: 7, category: 'set', badge: '屋台美味', name: '日式鐵板醬汁炒麵', desc: '彈牙麵條拌炒高麗菜與豬肉片，淋上特製日式濃口醬與海苔粉。', price: 95 },
+      { id: 8, category: 'set', badge: '解膩首選', name: '冷泡京都宇治焙茶（無糖）', desc: '低溫冷泡鎖住烘焙茶香，清新回甘，搭配飯糰與炸物最對味。', price: 35 }
+    ];
+
+    let cart = [];
+
+    function renderMenu(filter = 'all') {
+      const grid = document.getElementById('menuGrid');
+      const filtered = filter === 'all' ? menuData : menuData.filter(item => item.category === filter);
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-card">
+          <div>
+            <span class="menu-badge">${item.badge}</span>
+            <h3 class="serif">${item.name}</h3>
+            <p>${item.desc}</p>
+          </div>
+          <div class="menu-footer">
+            <span class="price">NT$ ${item.price}</span>
+            <button class="add-btn" onclick="addToCart(${item.id})">+ 加入點餐籃</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterMenu(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu(category);
+    }
+
+    function addToCart(id) {
+      const product = menuData.find(p => p.id === id);
+      const existing = cart.find(c => c.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function changeQty(id, delta) {
+      const idx = cart.findIndex(c => c.id === id);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      document.getElementById('cartCount').textContent = totalCount;
+      document.getElementById('cartTotal').textContent = `NT$ ${totalPrice}`;
+
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:24px 0;">目前點餐籃是空的，快去挑選喜歡的日式輕食吧！</p>`;
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="cart-item">
+            <div>
+              <strong style="font-size:15px;">${item.name}</strong>
+              <div style="font-size:13px; color:var(--accent-crimson);">NT$ ${item.price * item.qty}</div>
+            </div>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+              <span>${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function toggleCart(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('drawerOverlay');
+      if (open) {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    function submitOrder() {
+      const successBox = document.getElementById('orderSuccessBox');
+      if (cart.length === 0) {
+        alert('請先將喜愛的餐點加入點餐籃喔！');
+        return;
+      }
+      const name = document.getElementById('customerName').value.trim() || '貴賓';
+      const time = document.getElementById('pickupTime').value;
+      const randomNo = 'WC-' + Math.floor(100 + Math.random() * 900);
+
+      successBox.style.display = 'block';
+      successBox.innerHTML = `
+        <strong>✅ 預約成功！取餐編號：${randomNo}</strong><br>
+        謝謝 ${name}，我們已收到您的訂單，將於 <strong>${time}</strong> 為您新鮮備妥！
+      `;
+      cart = [];
+      updateCartUI();
+    }
+
+    renderMenu();
+    updateCartUI();
+  </script>
+</body>
+</html>
